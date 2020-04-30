@@ -8,6 +8,7 @@ const register = require("./Controllers/Register");
 const signin = require("./Controllers/Signin");
 const profile = require("./Controllers/Profile");
 const rank = require("./Controllers/Rank");
+const PORT = process.env.PORT || 3000;
 
 /***** Connecting to db *****/
 const db = knex({
@@ -53,6 +54,6 @@ app.post("/imageurl", (req, res) => {
 });
 /**********************/
 /*****Listing Server *****/
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server Started");
+app.listen(PORT, () => {
+  console.log(`Server Started on Port ${PORT} `);
 });
